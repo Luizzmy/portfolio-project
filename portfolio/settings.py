@@ -79,10 +79,16 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#sqlite is the default for django, but it can be changed to any other database in this section
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',
+        'USER': 'postgres',
+        'PASSWORD': env("PASSWORD_DB"),
+        'HOST': 'localhost',
+        #Default Port for postgres db
+        'PORT': '5432',
     }
 }
 
