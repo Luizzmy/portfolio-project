@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path
 import jobs.views
 
+#Para importar archivos estaticos
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name='home'),
     path('gabriel/', jobs.views.gabriel, name="gabriel"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
