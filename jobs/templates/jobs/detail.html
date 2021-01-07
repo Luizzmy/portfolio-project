@@ -51,50 +51,15 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Gabriel Valenzuela</h1>
-        <p class="lead text-muted">Hi! Welcome to my portfolio website. I'm a young developer with a great interest in music, technology and cryptocurrencies. Here you may find a collection of previous experiences, projects, trips, thoughts and more.</p>
+        <h1 class="fw-light">Job Detail</h1>
+        <p class="lead text-muted">{{job.summary}}</p>
         <p>
-          <a href="mailto:luisg.valenzuelam@gmail.com" class="btn btn-primary my-2">Want to get in touch? Send me an email!</a>
+          <a href="{%url 'home'%}" class="btn btn-primary my-2">Back</a>
         </p>
-        <img src="{%static 'me.JPG' %}" height=200></img>
+        <img src="{{job.image.url}}" height=200></img>
       </div>
     </div>
   </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          
-{%for job in jobs.all%}
-
-
-
-
-
-
-
-        <div class="col">
-          <a href="{%url 'detail' job.id%}">
-          <div class="card shadow-sm">
-              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{job.image.url}}">
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </a>
-        </div>
-        {%endfor%}
-      </div>
-    </div>
-  </div>
-
 </main>
 
 <footer class="text-muted py-5">
